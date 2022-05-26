@@ -101,7 +101,7 @@
 #define HISTORYSHOWVP9 0x42b8
 
 #define WAE_PALY_ADDR   0x00A0
-#define ALARM_BEEP_FLAG 0xa026
+#define ALARM_BEEP_FLAG 0xd926
 
 typedef struct alarmDataStruct {
     u16 flag;

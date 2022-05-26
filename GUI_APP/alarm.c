@@ -184,7 +184,7 @@ void alarmTask(void)
     if (MS500msFlag != 1) {
         return;
     }
-    ReadDGUS(0xa021, (u8 *)&cache, 12);  // GET PAGENOW
+    ReadDGUS(0xd921, (u8 *)&cache, 12);  // GET PAGENOW
     if (alarmCount != (*((u16 *)&cache[0]) + *((u16 *)&cache[2]))) {
         if (alarmCount < (*((u16 *)&cache[0]) + *((u16 *)&cache[2]))) {
             *((u16 *)&cache[10]) = 1;
