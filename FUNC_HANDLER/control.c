@@ -293,8 +293,8 @@ void resetEventHandle(void)
 {
     u16 cache;
     cache = 0x005a;
-    WriteDGUS(0xc520, (u8 *)&cache, 2);
-    WriteDGUS(0xc580, (u8 *)&cache, 2);
+    WriteDGUS(0xaf20, (u8 *)&cache, 2);
+    WriteDGUS(0xaf80, (u8 *)&cache, 2);
 }
 
 void clearRunTimeHandle(u16 eventId)
@@ -323,7 +323,7 @@ void inMaintainModEventHandle(void)
     u16 cache = 0;
     JumpPage(35);
     cache = 0x005a;
-    WriteDGUS(0xc700, (u8 *)&cache, 2);
+    WriteDGUS(0xc300, (u8 *)&cache, 2);
 }
 void outMaintainModEventHandle(void)
 {
@@ -439,10 +439,9 @@ void passwordFunOPThandle(u16 fun, u16 page)
 void pageHandle(u16 page)
 {
     u16 cache = 0x005a;
-    if (page == PAGE27) {
+    if (page == PAGE24) {
         WriteDGUS(0xa000 + (page << 8), (u8 *)&cache, 2);
-    }
-    if (page == PAGE44) {
+    } else if (page == PAGE27) {
         WriteDGUS(0xa000 + (page << 8), (u8 *)&cache, 2);
     }
 }

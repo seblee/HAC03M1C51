@@ -106,7 +106,7 @@ void ui(void)
         {
             static u8 diagnosisPageInCount  = 0;
             static u8 diagnosisPageOutCount = 0;
-            if ((picNow == PAGE39) || (picNow == PAGE67)) {
+            if (picNow == PAGE35) {
                 if (diagnosisPageInCount < 5) {
                     u16 cache = 1;
                     WriteDGUS(0xd927, (u8 *)&cache, 2);
