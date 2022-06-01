@@ -130,7 +130,7 @@ static u16      pageBak     = 0;
 static u16      showPage    = 0;
 static u16      showPagebAK = 0;
 u8              showIndex   = 0;
-static u8       alarmCount  = 0;
+static u16      alarmCount  = 0;
 
 const u16 alarmBeep = 0x0005;
 

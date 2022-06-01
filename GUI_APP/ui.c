@@ -72,9 +72,9 @@ void ui(void)
             }
             WriteDGUS(0xc920, (u8 *)sys_comp_runtime, 28);
         }
-        if (picNow == PAGE44) {
+        if (picNow == PAGE38) {
             u16 cache[16];
-            ReadDGUS(0xcca0, (u8 *)&cache[8], 6);
+            ReadDGUS(0xc6a0, (u8 *)&cache[8], 6);
 
             cache[0] = (cache[8] >> 4) & 0xff00;
             cache[0] |= (cache[8] >> 7) & 0x001f;
@@ -87,7 +87,7 @@ void ui(void)
             cache[5] = SOFTWARE_VER_H & 0xffff;
             cache[6] = SOFTWARE_VER_L >> 16;
             cache[7] = SOFTWARE_VER_L & 0xffff;
-            WriteDGUS(0xcc20, (u8 *)cache, 16);
+            WriteDGUS(0xc620, (u8 *)cache, 16);
         }
         if (picNow == PAGE47) {
             u16        cache[10];
