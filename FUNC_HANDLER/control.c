@@ -336,9 +336,9 @@ void outMaintainModEventHandle(void)
 void factoryParaOpt(u16 eventId)
 {
     u16 cache = eventId & 0xff;
-    WriteDGUS(0xcf2a, (u8 *)&cache, 2);
+    WriteDGUS(0xb82a, (u8 *)&cache, 2);
     cache = 0x005a;
-    WriteDGUS(0xcf8a, (u8 *)&cache, 2);
+    WriteDGUS(0xb88a, (u8 *)&cache, 2);
 }
 
 void saveFactoryCFG(void)
