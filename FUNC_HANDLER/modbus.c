@@ -50,6 +50,8 @@ const modbosCmd_t modbusCmdlib[] = {
     {BUS_EN, SLAVE_ID, BUS_FUN_03H, 0x01, 0xc8, MODE_PAGE, PAGE10, 0xaa22, 0x0369, 0x00ff},
     {BUS_EN, SLAVE_ID, BUS_FUN_03H, 0x02, 0xc8, MODE_PAGE, PAGE10, 0xaa23, 0x036b, 0x00ff},
     {BUS_EN, SLAVE_ID, BUS_FUN_03H, 0x01, 0xc8, MODE_PAGE, PAGE10, 0xaa25, 0x0377, 0x00ff},
+    {BUS_EN, SLAVE_ID, BUS_FUN_03H, 0x01, 0xc8, MODE_PAGE, PAGE10, 0xaa26, 0x036f, 0x00ff},
+    {BUS_EN, SLAVE_ID, BUS_FUN_03H, 0x01, 0xc8, MODE_PAGE, PAGE10, 0xaa27, 0x03d7, 0x00ff},
     {BUS_EN, SLAVE_ID, BUS_FUN_03H, 0x1f, 0xc8, MODE_PAGE, PAGE11, 0xab20, 0x0375, 0x00ff},
     {BUS_EN, SLAVE_ID, BUS_FUN_06H, 0x01, 0xc8, MODE_PANP, 0xac80, 0xac20, 0x023a, PAGE12}, //清楚当前告警
     {BUS_EN, SLAVE_ID, BUS_FUN_03H, 0x06, 0xc8, MODE_ALWA, 0x000d, 0xaea0, 0x0320, 0x00ff}, //告警
@@ -60,11 +62,13 @@ const modbosCmd_t modbusCmdlib[] = {
     {BUS_EN, SLAVE_ID, BUS_FUN_06H, 0x01, 0xc8, MODE_PANP, 0xb381, 0xb321, 0x013b, PAGE19},
     {BUS_EN, SLAVE_ID, BUS_FUN_06H, 0x01, 0xc8, MODE_PANP, 0xb382, 0xb322, 0x013c, PAGE19},
     {BUS_EN, SLAVE_ID, BUS_FUN_03H, 0x05, 0xc8, MODE_PANP, 0xb400, 0xb420, 0x015b, PAGE20},
+    {BUS_EN, SLAVE_ID, BUS_FUN_03H, 0x05, 0xc8, MODE_PANP, 0xb400, 0xb425, 0x013d, PAGE20},
     {BUS_EN, SLAVE_ID, BUS_FUN_06H, 0x01, 0xc8, MODE_PANP, 0xb480, 0xb420, 0x015b, PAGE20},
     {BUS_EN, SLAVE_ID, BUS_FUN_06H, 0x01, 0xc8, MODE_PANP, 0xb481, 0xb421, 0x015c, PAGE20},
     {BUS_EN, SLAVE_ID, BUS_FUN_06H, 0x01, 0xc8, MODE_PANP, 0xb482, 0xb422, 0x015d, PAGE20},
     {BUS_EN, SLAVE_ID, BUS_FUN_06H, 0x01, 0xc8, MODE_PANP, 0xb483, 0xb423, 0x015e, PAGE20},
     {BUS_EN, SLAVE_ID, BUS_FUN_06H, 0x01, 0xc8, MODE_PANP, 0xb484, 0xb424, 0x015f, PAGE20},
+    {BUS_EN, SLAVE_ID, BUS_FUN_06H, 0x01, 0xc8, MODE_PANP, 0xb485, 0xb425, 0x013d, PAGE20},
     {BUS_EN, SLAVE_ID, BUS_FUN_03H, 0x01, 0xc8, MODE_PANP, 0xb600, 0xb620, 0x02e4, PAGE22},
     {BUS_EN, SLAVE_ID, BUS_FUN_03H, 0x01, 0xc8, MODE_PANP, 0xb600, 0xb621, 0x02ea, PAGE22},
     {BUS_EN, SLAVE_ID, BUS_FUN_06H, 0x01, 0xc8, MODE_PANP, 0xb680, 0xb620, 0x02e4, PAGE22},
@@ -132,7 +136,7 @@ modbosCmd_t modbusCmdNow = {0};
 u16         CmdIndex     = 0;
 
 const dataCheckCmd_t dataCheckLib[] = {
-  // en     page  data    back   flag
+  // en       page    data    back   flag
     {BUS_EN, PAGE19, 0xb320, 0xb350, 0xb380}, //
     {BUS_EN, PAGE19, 0xb321, 0xb351, 0xb381}, //
     {BUS_EN, PAGE19, 0xb322, 0xb352, 0xb382}, //
@@ -141,6 +145,7 @@ const dataCheckCmd_t dataCheckLib[] = {
     {BUS_EN, PAGE20, 0xb422, 0xb452, 0xb482}, //
     {BUS_EN, PAGE20, 0xb423, 0xb453, 0xb483}, //
     {BUS_EN, PAGE20, 0xb424, 0xb454, 0xb484}, //
+    {BUS_EN, PAGE20, 0xb425, 0xb455, 0xb485}, //
     {BUS_EN, PAGE22, 0xb620, 0xb650, 0xb680}, //
     {BUS_EN, PAGE22, 0xb621, 0xb651, 0xb681}, //
     {BUS_EN, PAGE24, 0xb820, 0xb850, 0xb880}, //
