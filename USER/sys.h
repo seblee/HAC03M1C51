@@ -89,7 +89,7 @@ sbit P2_1 = P2 ^ 1;
 sbit KEY1_Vin_F = P2 ^ 2;
 
 #define SOFTWARE_VER_H (u32)0x03081500  // version
-#define SOFTWARE_VER_L (u32)0x01000000  // version
+#define SOFTWARE_VER_L (u32)0x02000000  // version
 
 extern data _TKS_FLAGA_type MSFlag;
 #define MS1msFlag   MSFlag.bits.b0
