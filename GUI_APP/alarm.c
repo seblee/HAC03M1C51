@@ -379,6 +379,9 @@ void saveAlarmHistory(void)
 void setAlarmDisplay(u8 index, u16 vp, u8 page)
 {
     u16 showTemp[16] = {0};
+    if (index >= 10) {
+        return;
+    }
     memcpy(showTemp, &showStartDesConst, sizeof(dgus_hex_t));
     ((dgus_hex_t *)showTemp)->Y      = START_Ys + 27 * index;
     ((dgus_hex_t *)showTemp)->Lib_ID = 0;
@@ -398,6 +401,9 @@ void setAlarmDisplay(u8 index, u16 vp, u8 page)
 void resetAlarmDisplay(u8 index)
 {
     u16 showTemp[16] = {0};
+    if (index >= 10) {
+        return;
+    }
     memcpy(showTemp, &showStartDesConst, sizeof(dgus_hex_t));
     ((dgus_hex_t *)showTemp)->Y      = START_Ys + 27 * index;
     ((dgus_hex_t *)showTemp)->Lib_ID = 1;
